@@ -1,0 +1,33 @@
+.cases-desk {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  position: relative;
+}
+
+.data-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 420px;
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  border: var(--glass-border);
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.data-card:hover {
+  transform: translateY(-5px);
+  background: rgba(45, 30, 35, 0.8);
+  border-color: rgba(212, 154, 154, 0.4);
+}
+
+.data-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  opacity: 0.15;
+}

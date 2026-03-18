@@ -1,0 +1,37 @@
+.footer {
+  margin: 2rem 5%;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  background: rgba(28, 37, 65, 0.7);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.footer-section p {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 119, 182, 0.2);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

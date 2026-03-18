@@ -1,0 +1,121 @@
+.navbar {
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  margin: 0 5%;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  box-shadow: var(--shadow);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: nowrap;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  color: var(--primary-color);
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  padding: 0.5rem 0.8rem;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-links::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--primary-light);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-links:hover::after, .nav-links.active::after {
+  width: 80%;
+}
+
+.nav-links:hover, .nav-links.active {
+  color: var(--primary-light);
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+  
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background: var(--card-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: var(--border-radius);
+    padding: 2rem 0;
+    box-shadow: var(--shadow);
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .nav-item {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}

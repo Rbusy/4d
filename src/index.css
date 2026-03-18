@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+  --primary-color: #d49a9a; /* Dusty Rose - accent color */
+  --primary-light: #fbe6e6; /* Light Pink - highlights */
+  --secondary-color: #a87b7b; /* Muted Rose */
+  --accent-color: #8f5c64; /* Deep Rose */
+  
+  /* Neutral Dark backgrounds for contrast */
+  --bg-color: #121212; /* Very Dark Charcoal */
+  --card-bg: rgba(26, 26, 26, 0.7); /* Dark Glass Grey */
+  --footer-bg: #181818; /* Separated Footer Grey */
+  
+  --text-color: #e2e2e2; /* Clear text */
+  --text-muted: #9e9e9e;
+  
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --border-radius: 8px;
+  --transition: all 0.4s ease-in-out;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Elegant Background Overlay */
+.elegant-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at top right, rgba(212, 154, 154, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at bottom left, rgba(143, 92, 100, 0.03) 0%, transparent 50%);
+}
+
+/* Elegant Glass Card */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  background: rgba(35, 35, 35, 0.8);
+  border-color: rgba(212, 154, 154, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Elegant Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #1a1114;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(212, 154, 154, 0.15);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  color: var(--primary-light);
+  border-color: var(--secondary-color);
+}
+
+/* Typography styles */
+.text-gradient {
+  color: var(--primary-color);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-light);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--primary-color);
+  opacity: 0.6;
+}

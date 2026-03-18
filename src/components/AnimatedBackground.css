@@ -1,0 +1,50 @@
+.elegant-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at top right, rgba(212, 154, 154, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at bottom left, rgba(143, 92, 100, 0.03) 0%, transparent 50%);
+  overflow: hidden;
+}
+
+.petals-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rose-petal {
+  position: absolute;
+  top: -50px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="%23d49a9a" d="M50,90 C30,90 10,70 10,50 C10,30 30,10 50,10 C70,10 90,30 90,50 C90,70 70,90 50,90 Z M50,15 C33.4,15 20,28.4 20,45 C20,61.6 33.4,75 50,75 C66.6,75 80,61.6 80,45 C80,28.4 66.6,15 50,15 Z M42,48 C40,40 45,35 50,35 C55,35 60,40 58,48 C56,56 44,56 42,48 Z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: translateY(20vh) rotate(90deg) translateX(20px);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(-20px);
+  }
+  75% {
+    transform: translateY(80vh) rotate(270deg) translateX(20px);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(0);
+  }
+}
